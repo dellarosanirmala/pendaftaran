@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pendaftaran</title>
+    </head>
+    <body>
+        <div id="aplikasi">
+            <p>
+                Id<input type="text" id="txtID" v-model="newID" />
+                Nama<input type="text" id="txtNama" v-model="newNama" />
+                Alamat<input type="text" id="txtAlamat" v-model="newAlamat" />
+                <button v-on:click="tambahData"> Tambah Data</button>
+            </p>
+            <br>
+            <table border="2">
+            <thead>
+                <tr><td>ID</td><td>Nama</td><td>Alamat</td> <td>Action</td></tr>
+            </thead>
+            <tbody>
+                <tr v-for="ds in dataSiswa">
+                    <td>{{ ds.id }}</td> <td>{{ ds.nama }}</td> <td>{{ ds.alamat }}</td>
+                    <td><button v-on:click="hapusData($index)">Hapus</button> </td>
+                    <td><button v-on:click="editData($index)">Edit</button> </td>
+                
+                </tr>
+            </tbody> 
+        </table>
+        </div>
+    </body>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/03.js"></script>
+</html>
